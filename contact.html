@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <style>
+    /* (Same style block) */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      padding-top: 70px;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f9fa;
+      transition: background-color 0.6s ease;
+    }
+    body.scrolled-bg { background-color: #e0f7fa; }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      transition: background-color 0.4s ease, box-shadow 0.3s ease;
+    }
+    nav ul li a {
+      display: block;
+      padding: 18px 25px;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 500;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    nav ul li a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #ffff66;
+    }
+    nav.scrolled {
+      background-color: #1a1a1a;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+    .content {
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1 { color: #333; margin-bottom: 20px; }
+    p { color: #444; line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <h1>Contact Us</h1>
+    <p>Feel free to reach out to us via email, phone, or social media. We'd love to hear from you!</p>
+    <p style="margin-top: 1000px;">You've scrolled the contact page 💬</p>
+  </div>
+
+  <script>
+    const nav = document.querySelector("nav");
+    const body = document.body;
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        nav.classList.add("scrolled");
+        body.classList.add("scrolled-bg");
+      } else {
+        nav.classList.remove("scrolled");
+        body.classList.remove("scrolled-bg");
+      }
+    });
+  </script>
+
+</body>
+</html>
